@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta sobre el under musical argentino</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <!-- fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee&family=Fugaz+One&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="flex-header flex-header__img">
+        <h1 class="titulo"><a href="../index.html">Under Argentino</a></h1>
+        <nav>
+            <ul class="lista-header">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./origen.html">Representantes</a></li>
+                <li><a href="./multimedia.html">Multimedia</a></li>
+                <li><a href="./formulario.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <article class="texto1">
+                <h2 class="titulo-multimedia">Formulario</h2>
+                <p class="texto-multimedia">A continuacion responderan que les parecio el sitio web acerca del under
+                    argentino.</p>
+            </article>
+            <div class="grid-formulario">
+                <div class="grid__form1 form ">
+                    <p class="h2__font titulos-formulario">Contacto</p>
+                    <form action="/submit" method="post"></form>
+                    <label class="p__font form__text" for="nombre">Nombre</label>
+                    <input class="p__font form__text  form__input" type="text " name="" id="nombre">
+                    <label class="p__font form__text" for="email">Email</label>
+                    <input class="p__font form__text  form__input" type="email" name="" id="email">
+                    <label class="p__font form__text" for="genero">Genero</label>
+                    <div class="form__row">
+                        <p class="p__font">Hombre</p>
+                        <input class="p__font"type="radio" name="hombre" id="genero">
+                        <p class="p__font">Mujer</p>
+                        <input type="radio" name="mujer" id="genero">
+                        <p class="p__font">Prefiero no decirlo</p>
+                        <input type="radio" name="prefiero no decirlo" id="genero">
+                    </div>
+                    <p class="p__font form__text">¿Que te parece el under argentino?</p>
+                    <textarea class="p__font form__text  form__input" name="Opinion" id=""></textarea>
+                    <input class="p__font form__input-font"type="submit" value="Enviar">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="flex-footer">
+        <p>Creado por oZen</p>
+        <nav>
+            <ul class="lista-footer">
+                <li><a href="https://www.instagram.com/enzocurletto/"><img src="../img/index/instagram.png"></a></li>
+                <li><a href="https://kick.com/enzobes"><img src="../img/index/kick (1).png"></a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
