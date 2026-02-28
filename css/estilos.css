@@ -238,7 +238,7 @@ footer nav {
 .cards {
     display: flex;
     flex-direction: column;
-    height: 36vw;
+    height: 38vw;
     width: 30vw;
     background-color: #ffffff;
     border-radius: 45px;
@@ -361,11 +361,10 @@ footer nav {
     display: grid;
     grid-template-areas:
         ". formulario .";
-    grid-template-columns: 31% 50% 25%;
-    align-items: center;
+    grid-template-columns: 0% 100% 0%;
     padding-top: 1vw;
     padding-bottom: 8vw;
-    padding-left: 5vw;
+    padding-left: 35vw;
     border: 2px solid white;
 }
 
@@ -379,7 +378,7 @@ footer nav {
     align-items: center;
     align-content: center;
     flex-direction: column;
-    height: 25vw;
+    height: 30vw;
     width: 30vw;
     background-color: #ffd900c4;
     border-radius: 45px;
@@ -396,6 +395,7 @@ footer nav {
 .form__text {
     padding-left: 1rem;
     font-size: 2rem;
+    text-align: center;
     color: rgb(0, 0, 0);
     text-decoration: #464646;
 }
@@ -420,6 +420,11 @@ footer nav {
 
 .form_padding {
     padding: 5;
+}
+
+.centrado-boton{
+    display: flex;
+    justify-content: center;
 }
 
 @media (max-width: 425px) {
