@@ -4,17 +4,23 @@
     box-sizing: border-box;
 }
 
+header h2 {
+    font-family: "Fugaz One", sans-serif;
+    text-decoration: none;
+    color: rgb(228, 165, 83);
+}
+
 header a {
     font-family: "Fugaz One", sans-serif;
     text-decoration: none;
-    color: burlywood;
+    color: rgb(196, 196, 196);
 }
 
 section article h2 {
     font-family: "Space Mono", monospace;
     color: #f5f5f5;
     font-size: 2.5em;
-    text-shadow: 5px 5px #ff7300;
+    text-shadow: 5px 5px #ff4800;
 }
 
 .h2__font {
@@ -42,9 +48,13 @@ footer img {
     width: 35px;
 }
 
-body {
+.foto-niceto {
     background-image: url("../img/index/niceto2.jpg");
     background-size: cover;
+}
+
+.fondo-negro{
+    background: rgba(0, 0, 0, 0.7);
 }
 
 footer {
@@ -71,55 +81,47 @@ section article label {
 }
 
 .flex-header {
-    list-style: none;
     display: flex;
+    font-weight: bold;
     justify-content: space-between;
     position: fixed;
     width: 100%;
-    padding-top: 0.1rem;
-    height: 3.4vw;
+    padding-top: 1vh;
+    height: 8vh;
+    background: radial-gradient(circle, #c200a8cb 43%, #000000 100%);
     border: 2px solid rgb(160, 160, 160);
 }
 
-.flex-header__img {
-    background-image: url("../img/index/header1.png");
+.texto-header{
+    font-family: "Space Mono", monospace;
+    color: #f5f5f5;
+    text-shadow: 5px 5px #000000;
 }
 
 .titulo {
     display: flex;
     align-items: center;
-    margin-bottom: 0.3rem;
-    font-size: 1.8rem;
-    margin-left: 3rem;
+    font-size: 2.3em;
+    margin-left: 3vw;
 }
 
 .lista-header {
     display: flex;
     list-style: none;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    align-content: end;
-    margin-right: 1rem;
-    height: 2.5vw;
-    padding-top: 0.2vw;
-    font-weight: bold;
-    min-height: 0.1rem;
-    font-size: 1.8rem;
+    padding: 4px;
+    font-size: 1.8em;
 }
 
 header nav {
-    width: 35vw;
-    min-width: 45vw;
-    font-size: 1.5rem;
+    width: 50%;
+    height: 15vh;
     padding: 0.1rem;
 }
 
 .flex-footer {
     display: flex;
-    list-style: none;
-    justify-content: space-between;
-    align-content: center;
     align-items: center;
     flex-direction: column;
     background-color: black;
@@ -130,9 +132,9 @@ header nav {
 
 .lista-footer {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     list-style: none;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 footer nav {
@@ -154,9 +156,9 @@ footer nav {
         "texto1 img1"
         "texto2 img2"
         "texto3 img3";
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    grid-template-rows: 33% 33% 33%;
+    grid-template-rows: 1fr 1fr 1fr;
     padding-left: 2rem;
     padding-top: 6vw;
     padding-right: 2rem;
@@ -202,12 +204,13 @@ footer nav {
     grid-template-areas:
         "cards1 cards2 cards3"
         "cards4 cards5 cards6";
-    grid-template-columns: 34% 34% 35%;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    grid-template-rows: 15% 90%;
-    padding-left: 2.3rem;
-    padding-top: 19vw;
-    padding-right: 2rem;
+    grid-template-rows: 1fr 1fr;
+    padding-left: 2vw;
+    padding-top: 9vh;
+    padding-right: 2vw;
+    background-color: #706868;
     border: 2px solid white;
 }
 
@@ -238,10 +241,9 @@ footer nav {
 .cards {
     display: flex;
     flex-direction: column;
-    height: 38vw;
-    width: 30vw;
-    background-color: #ffffff;
+    background-color: #d6d0d0;
     border-radius: 45px;
+    margin: 1rem;
 }
 
 .cards__title {
@@ -268,20 +270,8 @@ footer nav {
 }
 
 .cards__links img {
-    display: flex;
-    justify-content: center;
-    padding-left: 2.7rem;
-    padding-top: 0.3rem;
-    flex-direction: row;
-    width: 65%;
-}
-
-.padding-agus {
-    padding-bottom: 2.4rem;
-}
-
-.padding-little {
-    padding-bottom: 1.5rem;
+    width: 45%;
+    padding: 0.2rem;
 }
 
 .cards__links {
@@ -296,6 +286,7 @@ footer nav {
 
 .gridr__fonts {
     font-size: 3.4em;
+    padding-bottom: 2.4rem;
 }
 
 .gridr__fonts2 {
@@ -307,16 +298,12 @@ footer nav {
     grid-template-areas:
         "video1 video2"
         "video3 video4";
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    grid-template-rows: 15% 90%;
-    padding-top: 15vw;
-    padding-left: 5vw;
+    grid-template-rows: 1fr 1fr;
+    padding: 5%;
+    background-color: #797979;
     border: 2px solid white;
-}
-
-.padding-footer-multimedia {
-    padding-bottom: 100vw;
 }
 
 .titulo-multimedia {
@@ -337,7 +324,7 @@ footer nav {
 }
 
 .iframe__background {
-    border: 5px solid rgb(174, 0, 255);
+    border: 5px solid rgb(121, 25, 165);
     border-radius: 55px;
 }
 
@@ -361,10 +348,8 @@ footer nav {
     display: grid;
     grid-template-areas:
         ". formulario .";
-    grid-template-columns: 0% 100% 0%;
-    padding-top: 1vw;
-    padding-bottom: 8vw;
-    padding-left: 35vw;
+    grid-template-columns: 33% 34% 33%;
+    padding: 5%;
     border: 2px solid white;
 }
 
@@ -378,9 +363,7 @@ footer nav {
     align-items: center;
     align-content: center;
     flex-direction: column;
-    height: 30vw;
-    width: 30vw;
-    background-color: #ffd900c4;
+    background-color: #eccc14c4;
     border-radius: 45px;
 }
 
@@ -397,7 +380,7 @@ footer nav {
     font-size: 2rem;
     text-align: center;
     color: rgb(0, 0, 0);
-    text-decoration: #464646;
+    text-decoration: #777777;
 }
 
 .form__input {
@@ -425,6 +408,10 @@ footer nav {
 .centrado-boton{
     display: flex;
     justify-content: center;
+}
+
+.fondo-contac-multi{
+    background-color: #8A2BE2;
 }
 
 @media (max-width: 425px) {
@@ -587,30 +574,5 @@ footer nav {
 
     .grid__video4 {
         grid-area: video4;
-    }
-}
-
-@media s {
-    .main-item {
-        display: grid;
-        grid-template-areas:
-            "texto1"
-            "img1"
-            "texto2"
-            "img2"
-            "texto3"
-            "img3";
-        grid-template-columns: 100%;
-        padding-top: 85%;
-        gap: 5rem;
-        grid-template-rows: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
-        border: 2px solid white;
-    }
-
-    .tamaño-multimedia {
-        width: 325px;
-        height: 300px;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
     }
 }
