@@ -1,0 +1,36 @@
+@use "./funciones";
+@use "./variables";
+
+footer {
+    color: rgb(238, 238, 238);
+
+    p {
+        @include funciones.fonts(variables.$fuente-1, large);
+    }
+
+    img {
+        height: 35px;
+        width: 35px;
+        box-shadow: #ffffff;
+    }
+
+    nav {
+        width: 4vw;
+    }
+}
+
+.flex-footer {
+    @include funciones.flex-centrado;
+    flex-direction: column;
+    background-color: black;
+    border-left: 2px solid rgb(160, 160, 160);
+    border-bottom: 2px solid rgb(160, 160, 160);
+    border-right: 2px solid rgb(160, 160, 160);
+}
+
+.lista-footer {
+    @include funciones.flex;
+    list-style: none;
+    justify-content: space-between;
+    flex-direction: row;
+}

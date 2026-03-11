@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "sass": "^1.97.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass",
+    "sass:watch": "sass --watch estilos.scss  ../css/estilos.css"
+  }
+}

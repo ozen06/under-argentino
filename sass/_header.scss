@@ -1,0 +1,52 @@
+@use "./funciones";
+@use "./variables";
+
+header {
+    h2 {
+        @include funciones.fonts(variables.$fuente-1, #e4a553);
+        text-decoration: none;
+    }
+
+    a {
+        @include funciones.fonts(variables.$fuente-1, #d8d8d8);
+        text-decoration: none;
+    }
+
+    nav {
+        @include funciones.flex-centrado;
+    }
+
+    ul {
+        width: calc(100% - 50px);
+    }
+
+}
+
+.flex-header {
+    @include funciones.flex(flex, space-between);
+    font-weight: bold;
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    background: radial-gradient(circle, #c200a8cb 43%, #000000 100%);
+    border: 2px solid rgb(160, 160, 160);
+}
+
+.texto-header {
+    @include funciones.fonts(variables.$fuente-2, #ffffff, null, 5px 5px #000000);
+}
+
+.titulo {
+    @include funciones.flex-centrado;
+    @include funciones.fonts(variables.$fuente-2, null, null, 5px 5px #9c1b85);
+    @include funciones.fonts($font-size: 2.5em);
+    margin-left: 3vw;
+}
+
+.lista-header {
+    @include funciones.flex(flex, space-around, null);
+    @include funciones.fonts($font-size: 2.2em);
+    list-style: none;
+    width: 50vw;
+    padding-right: 2rem;
+}

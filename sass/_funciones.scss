@@ -1,0 +1,20 @@
+@mixin fonts($font-family: null, $color: null, $font-size: null, $text-shadow: null, $text-align: null) {
+    font-family: $font-family;
+    color: $color;
+    font-size: $font-size;
+    text-shadow: $text-shadow;
+    text-align: $text-align;
+}
+
+@mixin flex($display: flex, $justify-content: null, $align-items: null, $align-self: null) {
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    align-self: $align-self;
+}
+
+@mixin flex-centrado() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

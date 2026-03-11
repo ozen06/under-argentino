@@ -1,0 +1,449 @@
+@use "./header";
+@use "./variables";
+@use "./funciones";
+@use "./footer";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+section article {
+    h2 {
+        @include funciones.fonts(variables.$fuente-2, #f5f5f5, 2.5em, 5px 5px #ff4800);
+    }
+
+    p {
+        @include funciones.fonts(variables.$fuente-1, #eeeeee, null, 3px 7px #942121, justify);
+    }
+
+    input text {
+        color: #942121;
+    }
+
+    label {
+        color: rgb(238, 238, 238);
+    }
+}
+
+.h2__font {
+    @include funciones.fonts(variables.$fuente-1);
+}
+
+.p__font {
+    @extend .h2__font;
+}
+
+.foto-niceto {
+    background-image: url("../img/index/niceto2.jpg");
+    background-size: cover;
+}
+
+.fondo-negro {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.main-item {
+    display: grid;
+    grid-template-areas:
+        "texto1 img-1"
+        "texto2 img-2"
+        "texto3 img-3";
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+    grid-template-rows: 1fr 1fr 1fr;
+    border: 2px solid white;
+
+    img {
+        width: 95%;
+        flex-wrap: wrap;
+    }
+
+}
+
+
+.titulo-intro {
+    background-color: #000000;
+    width: auto;
+    @include funciones.flex-centrado;
+    margin-top: 11%;
+    border: 2px solid rgb(123, 255, 0);
+    text-align: center;
+    padding: 0.1rem;
+    font-size: 2.8em;
+}
+
+
+@for $i from 1 through 3 {
+    .texto#{$i} {
+        grid-area: texto#{$i};
+        font-size: 2rem;
+
+    }
+}
+
+@for $i from 1 through 3 {
+    .img-#{$i} {
+        grid-area: img-#{$i};
+        @include funciones.flex(flex, center, bas, end);
+    }
+}
+
+.gridr {
+    display: grid;
+    grid-template-areas:
+        "cards1 cards2 cards3"
+        "cards4 cards5 cards6";
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    grid-template-rows: 1fr 1fr;
+    padding-left: 2vw;
+    padding-top: 9vh;
+    padding-right: 2vw;
+    background-color: #a59d9d;
+    border: 2px solid white;
+
+    .cards p {
+        font-size: 3em;
+        color: #ffffff;
+        text-shadow: 1px 1px 10px #000000;
+    }
+}
+
+@for $i from 1 through 6 {
+    .gridr__cards#{$i} {
+        grid-area: cards#{$i};
+    }
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    background: #e30707;
+    background: radial-gradient(circle, rgba(227, 7, 7, 1) 0%, rgba(212, 210, 210, 1) 100%);
+    border-radius: 45px;
+    box-shadow: 6px 12px #3f392e;
+    margin: 1.5rem;
+}
+
+.cards__title {
+    @include funciones.flex-centrado;
+    margin: 3%;
+    color: #ffeded;
+    text-shadow: 5px 5px 1px #000000;
+}
+
+.cards__title-text {
+    font-size: 5em;
+    @include funciones.flex-centrado;
+}
+
+.cards__img {
+    display: flex;
+    width: 100%;
+    border-top: 5px solid rgb(0, 0, 0);
+    border-bottom: 5px solid rgb(0, 0, 0);
+}
+
+.cards__info {
+    @include funciones.flex-centrado;
+    font-size: 7em;
+    border-bottom: 5px solid rgb(0, 0, 0);
+}
+
+.cards__links {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+
+    img {
+        width: 45%;
+        padding: 0.2rem;
+        text-shadow: 1px 1px 15px #ffffff;
+    }
+}
+
+.gridr__fonts {
+    font-size: 3.7em;
+    padding: 3%;
+}
+
+.grid-multimedia {
+    display: grid;
+    grid-template-areas:
+        "video1 video2"
+        "video3 video4";
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    grid-template-rows: 1fr 1fr;
+    padding: 5%;
+    background-color: #797979;
+    border: 2px solid white;
+}
+
+.titulo-multimedia {
+    @include funciones.flex-centrado;
+    padding-top: 5rem;
+    text-shadow: 4px 5px 10px black
+}
+
+.texto-multimedia {
+    @include funciones.flex-centrado;
+    padding-bottom: 1rem;
+}
+
+.tamaño-multimedia {
+    width: 800px;
+    height: 600px;
+}
+
+.iframe__background {
+    border: 5px solid rgb(121, 25, 165);
+    border-radius: 55px;
+}
+
+@for $i from 1 through 4 {
+    .grid__video#{$i} {
+        grid-area: video#{$i};
+    }
+}
+
+.grid-formulario {
+    display: grid;
+    grid-template-areas:
+        ". formulario .";
+    grid-template-columns: 33% 34% 33%;
+    padding: 5%;
+    border: 2px solid white;
+}
+
+.grid__form1 {
+    grid-area: formulario;
+}
+
+.form {
+    @include funciones.flex-centrado;
+    flex-direction: column;
+    background-color: #eccc14c4;
+    border-radius: 45px;
+}
+
+.titulos-formulario {
+    text-shadow: #92a098 1px 0 10px;
+    font-weight: bold;
+    font-size: 4em;
+    color: white;
+}
+
+.form__text {
+    padding-left: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-decoration: #777777;
+}
+
+.form__input {
+    width: 20rem;
+    height: 2.4rem;
+    border: 2px solid rgb(255, 145, 0);
+    border-radius: 5%;
+}
+
+.form__row {
+    display: flex;
+    flex-direction: row;
+    border: 100px;
+    font-size: 1.5em;
+}
+
+.form__input-font {
+    font-size: 1.2rem;
+}
+
+.form_padding {
+    padding: 5;
+}
+
+.centrado-boton {
+    @include funciones.flex-centrado;
+}
+
+.fondo-contac-multi {
+    background-color: #8A2BE2;
+}
+
+@media (max-width: 425px) {
+    header {
+        h2 {
+            @include funciones.fonts(variables.$fuente-1, #e4a553);
+            text-decoration: none;
+        }
+
+        a {
+            @include funciones.fonts(variables.$fuente-1, #c4c4c4);
+            text-decoration: none;
+        }
+    }
+
+    .flex-header {
+        @include funciones.flex(flex, space-between);
+        font-weight: bold;
+        position: fixed;
+        width: fit-content;
+        padding-top: 0.5vh;
+        height: 8vh;
+        background: radial-gradient(circle, #c200a8cb 43%, #000000 100%);
+        border: 2px solid rgb(160, 160, 160);
+    }
+
+    .texto-header {
+        @include funciones.fonts(variables.$fuente-2, #f5f5f5, null, 5px 5px #000000);
+    }
+
+    .titulo {
+        @include funciones.flex-centrado;
+        @include funciones.fonts($font-size: 1.8em);
+        margin-left: 3vw;
+    }
+
+    .lista-header {
+        @include funciones.flex(flex, space-around, center);
+        @include funciones.fonts($font-size: 1.8em);
+        list-style: none;
+        padding: 4px;
+    }
+
+    header nav {
+        width: 35%;
+        height: 15vh;
+        padding: 0.1rem;
+    }
+
+    .titulo {
+        font-size: 2.8rem;
+        margin: 0;
+    }
+
+    .main-item {
+        display: grid;
+        grid-template-areas:
+            "texto1"
+            "img1"
+            "texto2"
+            "img2"
+            "texto3"
+            "img3";
+        grid-template-columns: 90%;
+        padding-top: 70%;
+        grid-template-rows: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
+        border: 2px solid white;
+    }
+
+    @for $i from 1 through 3 {
+        .texto#{$i} {
+            grid-area: texto#{$i};
+            font-size: 1.2rem;
+        }
+    }
+
+    @for $i from 1 through 3 {
+        .img-#{$i} {
+            grid-area: img#{$i};
+            width: 120%;
+            padding-right: 2rem;
+            padding-top: 15%;
+            @include funciones.flex-centrado;
+        }
+    }
+
+    .flex-footer {
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: black;
+        border-left: 2px solid rgb(160, 160, 160);
+        border-bottom: 2px solid rgb(160, 160, 160);
+        border-right: 2px solid rgb(160, 160, 160);
+    }
+
+    .lista-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+    }
+
+    footer nav {
+        width: max-content;
+    }
+
+    .grid-multimedia {
+        display: grid;
+        grid-template-areas:
+            "video1"
+            "video2"
+            "video3"
+            "video4";
+        grid-template-columns: 75%;
+        align-content: center;
+        grid-template-rows: 25% 25% 25% 25%;
+        border: 2px solid white;
+    }
+
+    .tamaño-multimedia {
+        width: 375px;
+        height: 300px;
+    }
+
+    .titulo-multimedia {
+        padding-top: 43%;
+        text-align: center;
+        font-size: 3rem;
+    }
+
+    .texto-multimedia {
+        @include funciones.flex-centrado;
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    .iframe__background {
+        border: 5px solid rgb(174, 0, 255);
+        border-radius: 55px;
+    }
+
+    @for $i from 1 through 4 {
+        .grid__video#{$i} {
+            grid-area: video#{$i};
+        }
+    }
+
+    .gridr {
+        display: grid;
+        grid-template-areas:
+            "cards1 cards2 cards3"
+            "cards4 cards5 cards6";
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        grid-template-rows: 1fr 1fr;
+        width: fit-content;
+        background-color: #a59d9d;
+        border: 2px solid white;
+
+        .cards p {
+            font-size: 3em;
+        }
+    }
+}
