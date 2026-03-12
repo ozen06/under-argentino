@@ -22,7 +22,7 @@ section article {
     }
 
     p {
-        @include funciones.fonts(variables.$fuente-1, #eeeeee, null, 3px 7px #942121, justify);
+        @include funciones.fonts(variables.$fuente-1, #ffffff, null, 1px 1px 10px #c45f00, justify);
     }
 
     input text {
@@ -74,7 +74,7 @@ section article {
     background-color: #000000;
     width: auto;
     @include funciones.flex-centrado;
-    margin-top: 11%;
+    margin-top: 10%;
     border: 2px solid rgb(123, 255, 0);
     text-align: center;
     padding: 0.1rem;
@@ -93,7 +93,7 @@ section article {
 @for $i from 1 through 3 {
     .img-#{$i} {
         grid-area: img-#{$i};
-        @include funciones.flex(flex, center, bas, end);
+        @include funciones.flex(flex, center, baseline, end);
     }
 }
 
@@ -190,14 +190,18 @@ section article {
 }
 
 .titulo-multimedia {
-    @include funciones.flex-centrado;
-    padding-top: 5rem;
-    text-shadow: 4px 5px 10px black
+    padding-top: 5%;
+    text-align: center;
+    text-shadow: 4px 5px 10px black;
+    background-color: #8A2BE2;
+    margin: 0;
 }
 
 .texto-multimedia {
     @include funciones.flex-centrado;
-    padding-bottom: 1rem;
+    padding: 1rem;
+    background-color: #8A2BE2;
+    margin: 0;
 }
 
 .tamaño-multimedia {
@@ -220,7 +224,7 @@ section article {
     display: grid;
     grid-template-areas:
         ". formulario .";
-    grid-template-columns: 33% 34% 33%;
+    grid-template-columns: 1fr 1fr 1fr;
     padding: 5%;
     border: 2px solid white;
 }

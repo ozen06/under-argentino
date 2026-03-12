@@ -14,9 +14,6 @@ header nav {
   justify-content: center;
   align-items: center;
 }
-header ul {
-  width: calc(100% - 50px);
-}
 
 .bootstrap-navbar {
   display: none;
@@ -55,6 +52,7 @@ header ul {
   font-size: 2.2em;
   list-style: none;
   width: 50vw;
+  padding-top: 1%;
   padding-right: 2rem;
 }
 
@@ -64,14 +62,12 @@ footer {
 footer p {
   font-family: "Fugaz One", sans-serif;
   color: large;
+  text-align: center;
 }
 footer img {
-  height: 35px;
-  width: 35px;
+  height: 45px;
+  width: 45px;
   box-shadow: #ffffff;
-}
-footer nav {
-  width: 4vw;
 }
 
 .flex-footer {
@@ -80,6 +76,7 @@ footer nav {
   align-items: center;
   flex-direction: column;
   background-color: black;
+  font-size: 1.4em;
   border-left: 2px solid rgb(160, 160, 160);
   border-bottom: 2px solid rgb(160, 160, 160);
   border-right: 2px solid rgb(160, 160, 160);
@@ -88,8 +85,10 @@ footer nav {
 .lista-footer {
   display: flex;
   list-style: none;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
+  margin-top: -12%;
+  padding-left: 2%;
 }
 
 * {
@@ -113,8 +112,8 @@ section article h2 {
 }
 section article p {
   font-family: "Fugaz One", sans-serif;
-  color: #eeeeee;
-  text-shadow: 3px 7px #942121;
+  color: #ffffff;
+  text-shadow: 1px 1px 10px #c45f00;
   text-align: justify;
 }
 section article input text {
@@ -156,7 +155,7 @@ section article label {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 11%;
+  margin-top: 10%;
   border: 2px solid rgb(123, 255, 0);
   text-align: center;
   padding: 0.1rem;
@@ -185,7 +184,7 @@ section article label {
   grid-area: img-1;
   display: flex;
   justify-content: center;
-  align-items: bas;
+  align-items: baseline;
   align-self: end;
 }
 
@@ -193,7 +192,7 @@ section article label {
   grid-area: img-2;
   display: flex;
   justify-content: center;
-  align-items: bas;
+  align-items: baseline;
   align-self: end;
 }
 
@@ -201,7 +200,7 @@ section article label {
   grid-area: img-3;
   display: flex;
   justify-content: center;
-  align-items: bas;
+  align-items: baseline;
   align-self: end;
 }
 
@@ -316,18 +315,20 @@ section article label {
 }
 
 .titulo-multimedia {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 5rem;
+  padding-top: 5%;
+  text-align: center;
   text-shadow: 4px 5px 10px black;
+  background-color: #8A2BE2;
+  margin: 0;
 }
 
 .texto-multimedia {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 1rem;
+  padding: 1rem;
+  background-color: #8A2BE2;
+  margin: 0;
 }
 
 .tamaño-multimedia {
@@ -359,7 +360,7 @@ section article label {
 .grid-formulario {
   display: grid;
   grid-template-areas: ". formulario .";
-  grid-template-columns: 33% 34% 33%;
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 5%;
   border: 2px solid white;
 }
