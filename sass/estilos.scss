@@ -54,12 +54,12 @@ section article {
 .main-item {
     display: grid;
     grid-template-areas:
-        "texto1 img-1"
-        "texto2 img-2"
+        "texto1 texto2"
+        "img-1 img-2"
         "texto3 img-3";
     grid-template-columns: 1fr 1fr;
-    padding: 2rem;
-    grid-template-rows: 1fr 1fr 1fr;
+    padding: 1rem;
+    grid-template-rows: 1fr 0.4fr 1fr;
     border: 2px solid white;
 
     img {
@@ -86,7 +86,7 @@ section article {
     .texto#{$i} {
         grid-area: texto#{$i};
         font-size: 2rem;
-
+        margin: 1rem;
     }
 }
 
@@ -279,58 +279,36 @@ section article {
 
 .fondo-contac-multi {
     background-color: #8A2BE2;
+    margin: 0;
 }
 
-@media (max-width: 425px) {
-    header {
-        h2 {
-            @include funciones.fonts(variables.$fuente-1, #e4a553);
-            text-decoration: none;
-        }
+.none {
+    display: none;
+}
 
-        a {
-            @include funciones.fonts(variables.$fuente-1, #c4c4c4);
-            text-decoration: none;
-        }
+@media (min-width: 425px) and (max-width: 500px) {
+    .none-mobile {
+        display: none;
     }
 
     .flex-header {
-        @include funciones.flex(flex, space-between);
-        font-weight: bold;
-        position: fixed;
-        width: fit-content;
-        padding-top: 0.5vh;
-        height: 8vh;
-        background: radial-gradient(circle, #c200a8cb 43%, #000000 100%);
-        border: 2px solid rgb(160, 160, 160);
+        @include funciones.flex(flex, center);
+        position: absolute;
+        height: 13%;
+        background: radial-gradient(circle, #c200a8cb 21%, #000000 100%);
     }
 
-    .texto-header {
-        @include funciones.fonts(variables.$fuente-2, #f5f5f5, null, 5px 5px #000000);
+    .bootstrap-navbar {
+        display: flex;
+        width: 100%;
     }
 
     .titulo {
-        @include funciones.flex-centrado;
-        @include funciones.fonts($font-size: 1.8em);
-        margin-left: 3vw;
+        font-size: 2.3rem;
     }
 
-    .lista-header {
-        @include funciones.flex(flex, space-around, center);
-        @include funciones.fonts($font-size: 1.8em);
-        list-style: none;
-        padding: 4px;
-    }
-
-    header nav {
-        width: 35%;
-        height: 15vh;
-        padding: 0.1rem;
-    }
-
-    .titulo {
-        font-size: 2.8rem;
-        margin: 0;
+    .none-mobile {
+        display: none;
     }
 
     .main-item {
@@ -342,51 +320,54 @@ section article {
             "img2"
             "texto3"
             "img3";
-        grid-template-columns: 90%;
-        padding-top: 70%;
-        grid-template-rows: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.3fr 1fr 0.3f 1fr 0.3fr;
+        padding: 3%;
+        padding-top: 7%;
         border: 2px solid white;
     }
 
     @for $i from 1 through 3 {
         .texto#{$i} {
             grid-area: texto#{$i};
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
     }
 
     @for $i from 1 through 3 {
         .img-#{$i} {
-            grid-area: img#{$i};
-            width: 120%;
-            padding-right: 2rem;
-            padding-top: 15%;
             @include funciones.flex-centrado;
+            grid-area: img#{$i};
+            width: 101%;
         }
     }
 
     .flex-footer {
-        display: flex;
-        list-style: none;
-        justify-content: space-between;
-        align-content: center;
-        align-items: center;
-        flex-direction: column;
-        background-color: black;
-        border-left: 2px solid rgb(160, 160, 160);
-        border-bottom: 2px solid rgb(160, 160, 160);
-        border-right: 2px solid rgb(160, 160, 160);
+        font-size: 1.3em;
     }
 
     .lista-footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        list-style: none;
+        padding-right: 2rem;
     }
 
-    footer nav {
-        width: max-content;
+    footer {
+        nav {
+            @include funciones.flex-centrado;
+            width: fit-content;
+        }
+
+        img {
+            border: 2px solid white;
+            height: 45px;
+            width: 45px;
+            margin: 1%;
+
+        }
+
+        p {
+            border: 2px solid white;
+            margin: 1%;
+        }
     }
 
     .grid-multimedia {
@@ -396,32 +377,38 @@ section article {
             "video2"
             "video3"
             "video4";
-        grid-template-columns: 75%;
-        align-content: center;
-        grid-template-rows: 25% 25% 25% 25%;
+        padding-left: 5%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
         border: 2px solid white;
     }
 
     .tamaño-multimedia {
-        width: 375px;
+        display: flex;
+        @include funciones.flex-centrado;
+        width: 435px;
         height: 300px;
     }
 
     .titulo-multimedia {
-        padding-top: 43%;
         text-align: center;
-        font-size: 3rem;
+        font-size: 2.7rem;
+        background-color: #8A2BE2;
+        margin: 0;
     }
 
     .texto-multimedia {
         @include funciones.flex-centrado;
         font-size: 2rem;
-        padding: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        background-color: #8A2BE2;
+        margin: 0;
     }
 
     .iframe__background {
-        border: 5px solid rgb(174, 0, 255);
-        border-radius: 55px;
+        border: 4px solid rgb(174, 0, 255);
+        border-radius: 25px;
     }
 
     @for $i from 1 through 4 {
@@ -433,17 +420,129 @@ section article {
     .gridr {
         display: grid;
         grid-template-areas:
-            "cards1 cards2 cards3"
-            "cards4 cards5 cards6";
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: center;
-        grid-template-rows: 1fr 1fr;
-        width: fit-content;
+            "cards1"
+            "cards2"
+            "cards3"
+            "cards4"
+            "cards5"
+            "cards6";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
         background-color: #a59d9d;
         border: 2px solid white;
 
         .cards p {
             font-size: 3em;
+            color: #ffffff;
+            text-shadow: 1px 1px 10px #000000;
         }
     }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        background: #e30707;
+        background: radial-gradient(circle, rgba(227, 7, 7, 1) 0%, rgba(212, 210, 210, 1) 100%);
+        border-radius: 45px;
+        box-shadow: 6px 12px #3f392e;
+        margin: 5%
+    }
+
+    .cards__title {
+        @include funciones.flex-centrado;
+        color: #ffeded;
+        text-shadow: 5px 5px 1px #000000;
+    }
+
+    .cards__title-text {
+        font-size: 4.1em;
+        @include funciones.flex-centrado;
+    }
+
+    .cards__img {
+        display: flex;
+        width: 100%;
+        border-top: 5px solid rgb(0, 0, 0);
+        border-bottom: 5px solid rgb(0, 0, 0);
+    }
+
+    .cards__info {
+        @include funciones.flex-centrado;
+        font-size: 7em;
+        border-bottom: 5px solid rgb(0, 0, 0);
+    }
+
+    .cards__links {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+
+        img {
+            width: 45%;
+            margin: 0.4rem;
+            text-shadow: 1px 1px 15px #ffffff;
+        }
+    }
+
+    .gridr__fonts {
+        font-size: 2.4em;
+    }
+
+    @for $i from 1 through 6 {
+        .gridr__cards#{$i} {
+            grid-area: cards#{$i};
+        }
+    }
+
+    .grid-formulario {
+        display: grid;
+        grid-template-areas:
+            ". formulario .";
+        grid-template-columns: 0.7fr 1fr 0.7fr;
+        padding: 7%;
+        border: 2px solid white;
+    }
+
+    .grid__form1 {
+        grid-area: formulario;
+    }
+
+    .titulos-formulario {
+        text-shadow: #92a098 1px 0 10px;
+        font-weight: bold;
+        font-size: 4em;
+        color: white;
+    }
+
+    .form__text {
+        padding-left: 1rem;
+        font-size: 2rem;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        text-decoration: #777777;
+    }
+
+    .form__input {
+        width: 20rem;
+        height: 2.4rem;
+        border: 2px solid rgb(255, 145, 0);
+        border-radius: 5%;
+    }
+
+    .form__input-font {
+        font-size: 1.2rem;
+    }
+
+    .centrado-boton {
+        @include funciones.flex-centrado;
+    }
+
+    .form {
+        @include funciones.flex-centrado;
+        flex-direction: column;
+        background-color: #eccc14c4;
+        border-radius: 20px;
+        padding: 3rem;
+    }
+
 }

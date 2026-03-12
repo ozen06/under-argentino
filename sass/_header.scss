@@ -22,6 +22,11 @@ header {
 
 }
 
+.bootstrap-navbar{
+    display: none
+}
+
+
 .flex-header {
     @include funciones.flex(flex, space-between);
     font-weight: bold;

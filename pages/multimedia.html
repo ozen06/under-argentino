@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria del under musical argentino</title>
     <!-- fuentes -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,14 +18,36 @@
 </head>
 
 <body class="foto-niceto">
-    <header class="flex-header">
-        <h1 class="titulo texto-header-titulo"><a href="../index.html">Under Argentino</a></h1>
+    <header class="flex-header flex-header__img ">
+        <h1 class="titulo texto-header-titulo none-mobile"><a href="../index.html">Under Argentino</a></h1>
         <nav>
-            <ul class="lista-header texto-header">
-                <li><a href="../index.html">Inicio</a></li>
+            <ul class="lista-header texto-header none-mobile">
+                <li class="flex-header__delete"><a href="../index.html">Inicio</a></li>
                 <li><a href="./origen.html">Representantes</a></li>
                 <li><a href="./multimedia.html">Multimedia</a></li>
                 <li><a href="./formulario.html">Contacto</a></li>
+            </ul>
+            <ul class="none bootstrap-navbar nav nav-pills">
+                <li class="nav-item dropdown">
+                    <a class="titulo texto-header-titulo dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                        role="button" aria-expanded="false">Under Argentino</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="../index.html">Inicio</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="./origen.html">Representantes</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="./multimedia.html">Multimedia</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="./formulario.html">Contacto</a></li>
+
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -53,7 +78,7 @@
                     src="https://www.youtube.com/embed/WQ7fCsJ2AIg?si=y9GztvZo48PikTU4" title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"></iframe> 
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
             </article>
         </section>
@@ -67,6 +92,11 @@
             </ul>
         </nav>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>
