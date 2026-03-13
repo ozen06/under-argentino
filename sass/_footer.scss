@@ -3,6 +3,7 @@
 
 footer {
     color: rgb(238, 238, 238);
+
     p {
         @include funciones.fonts(variables.$fuente-1, large);
         text-align: center;

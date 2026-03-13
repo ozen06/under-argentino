@@ -17,7 +17,7 @@ header {
     }
 }
 
-.bootstrap-navbar{
+.bootstrap-navbar {
     display: none
 }
 
@@ -27,6 +27,7 @@ header {
     font-weight: bold;
     position: fixed;
     width: 100%;
+    z-index: 5;
     height: 10vh;
     background: radial-gradient(circle, #c200a8cb 43%, #000000 100%);
     border: 2px solid rgb(160, 160, 160);
