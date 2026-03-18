@@ -59,28 +59,24 @@ section article {
         "texto3 img-3";
     grid-template-columns: 1fr 1fr;
     padding: 1rem;
-    grid-template-rows: 1fr 0.4fr 1fr;
+    grid-template-rows: auto;
     border: 2px solid white;
 
     img {
         width: 95%;
-        flex-wrap: wrap;
     }
 
 }
-
 
 .titulo-intro {
     background-color: #000000;
     width: auto;
     @include funciones.flex-centrado;
-    margin-top: 10%;
     border: 2px solid rgb(123, 255, 0);
     text-align: center;
     padding: 0.1rem;
     font-size: 2.8em;
 }
-
 
 @for $i from 1 through 3 {
     .texto#{$i} {
@@ -106,7 +102,6 @@ section article {
     align-items: center;
     grid-template-rows: 1fr 1fr;
     padding-left: 2vw;
-    padding-top: 9vh;
     padding-right: 2vw;
     background-color: #a59d9d;
     border: 2px solid white;
@@ -190,11 +185,11 @@ section article {
 }
 
 .titulo-multimedia {
-    padding-top: 5%;
     font-size: 4rem;
     text-align: center;
     text-shadow: 4px 5px 10px black;
     background-color: #8A2BE2;
+    z-index: -100;
     margin: 0;
 }
 
@@ -202,6 +197,7 @@ section article {
     @include funciones.flex-centrado;
     padding: 1rem;
     font-size: 2rem;
+    z-index: -100;
     background-color: #8A2BE2;
     margin: 0;
 }
@@ -291,15 +287,15 @@ section article {
     display: none;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 430px) {
     .none-mobile {
         display: none;
     }
 
     .flex-header {
         @include funciones.flex(flex, center);
-        position: sticky;
-        height: 18%;
+        margin: 0;
+        padding: 0;
         background: radial-gradient(circle, #c200a8cb 21%, #000000 100%);
     }
 
@@ -309,7 +305,7 @@ section article {
     }
 
     .titulo {
-        font-size: 2.3rem;
+        font-size: 1.8rem;
         @include funciones.fonts(variables.$fuente-2, null, null, 2px 3px #6d155d);
     }
 
@@ -319,6 +315,7 @@ section article {
 
     .main-item {
         display: grid;
+        grid-template-columns: auto;
         grid-template-areas:
             "texto1"
             "img1"
@@ -326,27 +323,29 @@ section article {
             "img2"
             "texto3"
             "img3";
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 0.3fr 1fr 0.3f 1fr 0.3fr;
-        padding: 0;
-        margin-top: -10%;
+        grid-template-rows:auto; /* La primera fila crece si es necesario */
+        min-height: 0; /* Usa svh para móviles */
+        overflow-y: auto;
         border: 2px solid white;
+        margin: 0;
+        padding: 0;
     }
 
     @for $i from 1 through 3 {
         .texto#{$i} {
             grid-area: texto#{$i};
-            font-size: 1.3rem;
+            font-size: 1rem;
         }
-    }
-
-    @for $i from 1 through 3 {
         .img-#{$i} {
+            grid-area: img#{$i};
             display: flex;
             justify-content: center;
-            grid-area: img#{$i};
-            width: 95%;
-            margin: 2.3%;
+
+            img {
+                width: 95%;
+                height: auto;
+                object-fit: cover;
+            }
         }
     }
 
@@ -358,7 +357,7 @@ section article {
         padding-right: 2rem;
     }
 
-    .texto--1{
+    .texto--1 {
         font-size: 3em;
     }
 
@@ -387,30 +386,35 @@ section article {
             "video2"
             "video3"
             "video4";
-        padding-left: 5%;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
         border: 2px solid white;
     }
 
     .tamaño-multimedia {
         display: flex;
-        @include funciones.flex-centrado;
-        width: 360px;
-        height: 300px;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        width: fit-content;
+        margin: 1%;
+        height: 200px;
     }
 
     .titulo-multimedia {
         text-align: center;
-        font-size: 2.7rem;
-        margin-top: -18%;
+        font-size: 2.2rem;
         background-color: #8A2BE2;
-        margin-top: -1%;
     }
 
     .texto-multimedia {
         @include funciones.flex-centrado;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         padding-left: 1rem;
         padding-right: 1rem;
         background-color: #8A2BE2;
@@ -418,7 +422,7 @@ section article {
     }
 
     .iframe__background {
-        border: 4px solid rgb(174, 0, 255);
+        border: 2px solid rgb(174, 0, 255);
         border-radius: 25px;
     }
 
@@ -437,14 +441,16 @@ section article {
             "cards4"
             "cards5"
             "cards6";
-        margin-top: -18%;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
         background-color: #a59d9d;
         border: 2px solid white;
 
         .cards p {
-            font-size: 2.8em;
+            font-size: 2.2em;
             color: #ffffff;
             text-shadow: 1px 1px 10px #000000;
         }
@@ -456,8 +462,7 @@ section article {
         background: #e30707;
         background: radial-gradient(circle, rgba(227, 7, 7, 1) 0%, rgba(212, 210, 210, 1) 100%);
         border-radius: 45px;
-        box-shadow: 6px 12px #3f392e;   
-        margin: 7%
+        box-shadow: 6px 12px #3f392e;
     }
 
     .cards__title {
@@ -467,7 +472,7 @@ section article {
     }
 
     .cards__title-text {
-        font-size: 3.9em;
+        font-size: 3em;
         @include funciones.flex-centrado;
     }
 
@@ -480,7 +485,7 @@ section article {
 
     .cards__info {
         @include funciones.flex-centrado;
-        font-size: 7em;
+        font-size: 6rem;
         border-bottom: 5px solid rgb(0, 0, 0);
     }
 
@@ -490,15 +495,15 @@ section article {
         text-align: center;
 
         img {
-            width: 45%;
-            margin: 0.4rem;
+            margin-top: -12%;
+            width: 65%;
             filter: drop-shadow(3px 4px rgba(71, 49, 49, 0.5));
             text-shadow: 1px 1px 15px #ffffff;
         }
     }
 
     .gridr__fonts {
-        font-size: 2.4em;
+        font-size: 2.1em;
     }
 
     .padding-little {
@@ -515,8 +520,11 @@ section article {
         display: grid;
         grid-template-areas:
             ". formulario .";
-        grid-template-columns: 0.7fr 1fr 0.7fr;
-        padding: 7%;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        padding: 5rem;
         border: 2px solid white;
     }
 
@@ -527,27 +535,27 @@ section article {
     .titulos-formulario {
         text-shadow: #92a098 1px 0 10px;
         font-weight: bold;
-        font-size: 4em;
+        font-size: 2em;
         color: white;
     }
 
     .form__text {
         padding-left: 1rem;
-        font-size: 2rem;
+        font-size: 1.6rem;
         text-align: center;
         color: rgb(0, 0, 0);
         text-decoration: #777777;
     }
 
     .form__input {
-        width: 20rem;
-        height: 2.4rem;
+        width: 17rem;
+        height: 1.5rem;
         border: 2px solid rgb(255, 145, 0);
         border-radius: 5%;
     }
 
     .form__input-font {
-        font-size: 1.2rem;
+        font-size: 1.3em;
     }
 
     .centrado-boton {
@@ -555,34 +563,18 @@ section article {
     }
 
     .form {
-        @include funciones.flex-centrado;
         flex-direction: column;
         background-color: #eccc14c4;
         border-radius: 20px;
-        padding: 1rem;
     }
 
 }
 
-@media (max-height: 768px) {
-    .flex-header {
-        position: absolute;
-        height: 10vh;
-    }
-
-    .lista-header {
-        @include funciones.flex(flex, space-around, null);
-        @include funciones.fonts($font-size: 1.8em);
-        list-style: none;
-        padding-left: 7%;
-        width: 55vw;
-    }
-
+@media (min-width: 1024px) and (max-width: 1440px){
     .titulo-intro {
         background-color: #000000;
         width: auto;
         @include funciones.flex-centrado;
-        margin-top: 10%;
         border: 2px solid rgb(123, 255, 0);
         text-align: center;
         padding: 0.1rem;
@@ -663,7 +655,6 @@ section article {
         align-items: center;
         grid-template-rows: 1fr 1fr;
         padding-left: 2vw;
-        padding-top: 9vh;
         padding-bottom: 5vh;
         padding-right: 2vw;
         background-color: #a59d9d;
@@ -747,7 +738,6 @@ section article {
     }
 
     .titulo-multimedia {
-        padding-top: 5%;
         text-align: center;
         font-size: 3.5em;
         text-shadow: 4px 5px 10px black;

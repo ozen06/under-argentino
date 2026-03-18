@@ -2,6 +2,17 @@
 @use "./variables";
 
 header {
+    @include funciones.flex(flex, center, center, center);
+    background: radial-gradient(circle, #c200a8cb 43%, #000000 100%);
+    border-bottom: 4px solid rgb(160, 160, 160);
+    font-weight: bold;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+
     h2 {
         @include funciones.fonts(variables.$fuente-1, #e4a553);
         text-decoration: none;
@@ -11,44 +22,28 @@ header {
         @include funciones.fonts(variables.$fuente-1, #d8d8d8);
         text-decoration: none;
     }
-
-    nav {
-        @include funciones.flex-centrado;
-    }
 }
 
 .bootstrap-navbar {
     display: none
 }
 
-
-.flex-header {
-    @include funciones.flex(flex, space-between);
-    font-weight: bold;
-    position: fixed;
-    width: 100%;
-    z-index: 5;
-    height: 10vh;
-    background: radial-gradient(circle, #c200a8cb 43%, #000000 100%);
-    border: 2px solid rgb(160, 160, 160);
-}
-
 .texto-header {
-    @include funciones.fonts(variables.$fuente-2, #ffffff, null, 5px 5px #000000);
+    @include funciones.fonts(variables.$fuente-2, #ffffff, null, 4px 3px #000000);
+    @include funciones.fonts($font-size: 1.3em);
 }
 
 .titulo {
-    @include funciones.flex-centrado;
-    @include funciones.fonts(variables.$fuente-2, null, null, 5px 5px #9c1b85);
-    @include funciones.fonts($font-size: 2.5em);
-    margin-left: 3vw;
+    @include funciones.fonts(variables.$fuente-2, null, null, 5px 5px #590061);
+    @include funciones.fonts($font-size: 2.1rem);
 }
 
 .lista-header {
-    @include funciones.flex(flex, space-around, null);
-    @include funciones.fonts($font-size: 2.2em);
+    @include funciones.flex(flex, center, center, center);
     list-style: none;
-    width: 50vw;
-    padding-top: 1%;
-    padding-right: 2rem;
+    padding-top: 2%;
+}
+
+.div-header {
+    padding: 1%;
 }
