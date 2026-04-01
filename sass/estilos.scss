@@ -16,6 +16,10 @@
     line-height: 1.5;
 }
 
+.class {
+    padding: 0;
+}
+
 section article {
     h2 {
         @include funciones.fonts(variables.$fuente-2, #f5f5f5, 2.5em, 2px 3px #ff4800);
@@ -323,8 +327,8 @@ section article {
             "img2"
             "texto3"
             "img3";
-        grid-template-rows:auto; /* La primera fila crece si es necesario */
-        min-height: 0; /* Usa svh para móviles */
+        grid-template-rows: auto;
+        min-height: 0;
         overflow-y: auto;
         border: 2px solid white;
         margin: 0;
@@ -336,6 +340,7 @@ section article {
             grid-area: texto#{$i};
             font-size: 1rem;
         }
+
         .img-#{$i} {
             grid-area: img#{$i};
             display: flex;
@@ -570,7 +575,187 @@ section article {
 
 }
 
-@media (min-width: 1024px) and (max-width: 1440px){
+@media (min-width: 720px) and (max-width: 1024px) {
+    .main-item {
+        display: grid;
+        grid-template-areas:
+            "texto1 texto2"
+            "img-1 img-2"
+            "texto3 img-3";
+        grid-template-columns: 1fr 1fr;
+        padding: 1rem;
+        grid-template-rows: auto;
+        border: 2px solid white;
+
+        img {
+            width: 95%;
+        }
+
+    }
+
+    .titulo-intro {
+        background-color: #000000;
+        width: auto;
+        @include funciones.flex-centrado;
+        border: 2px solid rgb(123, 255, 0);
+        text-align: center;
+        padding: 0.1rem;
+        font-size: 2.8em;
+    }
+
+    @for $i from 1 through 3 {
+        .texto#{$i} {
+            grid-area: texto#{$i};
+            font-size: 1.1rem;
+            margin: 1rem;
+        }
+    }
+
+    @for $i from 1 through 3 {
+        .img-#{$i} {
+            grid-area: img-#{$i};
+            @include funciones.flex(flex, center, baseline, end);
+        }
+    }
+
+    .texto-header {
+        @include funciones.fonts(variables.$fuente-2, #ffffff, null, 4px 3px #000000);
+        @include funciones.fonts($font-size: 1.1em);
+    }
+
+    .titulo {
+        @include funciones.fonts(variables.$fuente-2, null, null, 5px 5px #590061);
+        @include funciones.fonts($font-size: 1.9rem);
+    }
+
+    .main-item {
+        display: grid;
+        grid-template-areas:
+            "texto1 texto2"
+            "img-1 img-2"
+            "texto3 img-3";
+        grid-template-columns: 1fr 1fr;
+        padding: 1rem;
+        grid-template-rows: 0.3fr 0.1fr 0.1fr;
+        border: 2px solid white;
+
+        img {
+            width: 95%;
+            flex-wrap: wrap;
+        }
+
+    }
+
+    .tamaño-multimedia {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        width: fit-content;
+        margin: 1%;
+        height: 300px;
+        width: 350px;
+    }
+
+    .titulo-multimedia {
+        text-align: center;
+        font-size: 2.4rem;
+        background-color: #8A2BE2;
+    }
+
+    .texto-multimedia {
+        @include funciones.flex-centrado;
+        font-size: 1.4rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        background-color: #8A2BE2;
+        margin: 0;
+    }
+
+    .gridr {
+        display: grid;
+        grid-template-areas:
+            "cards1 cards2"
+            "cards3 cards4"
+            "cards5 cards6";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        background-color: #a59d9d;
+        border: 2px solid white;
+
+        .cards p {
+            font-size: 2.2em;
+            color: #ffffff;
+            text-shadow: 1px 1px 10px #000000;
+        }
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        background: #e30707;
+        background: radial-gradient(circle, rgba(227, 7, 7, 1) 0%, rgba(212, 210, 210, 1) 100%);
+        border-radius: 45px;
+        box-shadow: 6px 12px #3f392e;
+    }
+
+    .cards__title {
+        @include funciones.flex-centrado;
+        color: #ffeded;
+        text-shadow: 5px 5px 1px #000000;
+    }
+
+    .cards__title-text {
+        font-size: 3em;
+        @include funciones.flex-centrado;
+    }
+
+    .cards__img {
+        display: flex;
+        width: 100%;
+        border-top: 5px solid rgb(0, 0, 0);
+        border-bottom: 5px solid rgb(0, 0, 0);
+    }
+
+    .cards__info {
+        @include funciones.flex-centrado;
+        font-size: 6rem;
+        border-bottom: 5px solid rgb(0, 0, 0);
+    }
+
+    .cards__links {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+
+        img {
+            margin-top: -12%;
+            width: 65%;
+            filter: drop-shadow(3px 4px rgba(71, 49, 49, 0.5));
+            text-shadow: 1px 1px 15px #ffffff;
+        }
+    }
+
+    .gridr__fonts {
+        font-size: 2.1em;
+    }
+
+    .padding-little {
+        font-size: 3em;
+    }
+
+    @for $i from 1 through 6 {
+        .gridr__cards#{$i} {
+            grid-area: cards#{$i};
+        }
+    }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
     .titulo-intro {
         background-color: #000000;
         width: auto;
