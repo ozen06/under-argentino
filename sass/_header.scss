@@ -44,6 +44,20 @@ header {
     padding-top: 2%;
 }
 
+header h2 .titulo:hover{
+    color: #80008b;
+}
+
+/* Sintaxis básica */
+nav a:hover {
+  color: #ec5ae0;
+}
+
+/* Sintaxis básica */
+.otro a:hover {
+  color: #11b4d1;
+}
+
 .div-header {
     padding: 1%;
 }
