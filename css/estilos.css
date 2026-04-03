@@ -322,7 +322,7 @@ section article label {
   align-items: center;
   grid-template-rows: 1fr 1fr;
   margin: 0%;
-  padding: 5%;
+  padding-left: 5vw;
   background-color: #797979;
   border: 2px solid white;
 }
@@ -352,9 +352,10 @@ section article label {
   height: 600px;
 }
 
-.iframe__background {
-  border: 5px solid rgb(121, 25, 165);
+iframe {
+  border: 4px solid rgb(121, 25, 165);
   border-radius: 55px;
+  margin: 1%;
 }
 
 .grid__video1 {
@@ -613,8 +614,6 @@ section article label {
     grid-template-rows: 1fr 1fr;
     background-color: #797979;
     border: 2px solid white;
-    margin: 0%;
-    padding: 1%;
   }
   .titulo-multimedia {
     text-align: center;
@@ -631,8 +630,8 @@ section article label {
     background-color: #8A2BE2;
   }
   .tamaño-multimedia {
-    width: 480px;
-    height: 425px;
+    width: 500px;
+    height: 350px;
   }
   .iframe__background {
     border: 5px solid rgb(121, 25, 165);
